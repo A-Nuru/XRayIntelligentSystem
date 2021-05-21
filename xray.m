@@ -11,3 +11,5 @@ imds = imageDatastore('medicalmnist', 'IncludeSubfolders', true, 'LabelSource','
 % Counting the number of images in the dataset
 noOfImagesTotal = size(imds.Labels)
 
+% Counting the number of labels in each classes in the dataset
+labelCount = countEachLabel(imds)

@@ -13,3 +13,9 @@ noOfImagesTotal = size(imds.Labels)
 
 % Counting the number of labels in each classes in the dataset
 labelCount = countEachLabel(imds)
+
+% Display some of the images in the datastore.
+figure;
+perm = randperm(6820,20); for i = 1:9
+subplot(4,4,i); imshow(imds.Files{perm(i)});
+end

@@ -20,8 +20,18 @@ perm = randperm(6820,20); for i = 1:9
 subplot(4,4,i); imshow(imds.Files{perm(i)});
 end
 
+imds.ReadFcn = @customReadDatastoreImage;
+
 % plotting bar charts of label categories
 bar(labelCount.Count)
 set(gca,'xticklabel',labelCount.Label)
 
 
+function imds = customReadDatastoreImage(filename)
+% code from default function: 
+onState = warning('off', 'backtrace'); 
+c = onCleanup(@() warning(onState)); 
+imds = imread(filename); % added lines: 
+imds = imds(:,:,min(1:3, end)); 
+imds = imresize(imds,[28 28]);
+end

@@ -17,10 +17,11 @@ labelCount = countEachLabel(imds)
 % Display some of the images in the datastore.
 figure;
 perm = randperm(6820,20); for i = 1:9
-subplot(3,3,i); imshow(imds.Files{perm(i)});
+subplot(4,4,i); imshow(imds.Files{perm(i)});
 end
 
-
-
+% plotting bar charts of label categories
+bar(labelCount.Count)
+set(gca,'xticklabel',labelCount.Label)
 
 

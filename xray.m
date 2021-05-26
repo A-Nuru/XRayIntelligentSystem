@@ -34,4 +34,5 @@ c = onCleanup(@() warning(onState));
 imds = imread(filename); % added lines: 
 imds = imds(:,:,min(1:3, end)); 
 imds = imresize(imds,[28 28]);
+imds =im2gray(imds);
 end

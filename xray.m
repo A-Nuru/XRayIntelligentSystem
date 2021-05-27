@@ -26,6 +26,11 @@ imds.ReadFcn = @customReadDatastoreImage;
 bar(labelCount.Count)
 set(gca,'xticklabel',labelCount.Label)
 
+%Specify Training and Validation Sets
+% splitEachLabel splits the imds image datastore into 3 new datastores;
+% training set, test set and validation set
+[imdsTrain,imdsValidation, imdsTest] = splitEachLabel(imds,7000,950,1000, 'Randomized');
+
 
 function imds = customReadDatastoreImage(filename)
 % code from default function: 

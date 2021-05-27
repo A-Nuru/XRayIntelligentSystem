@@ -31,6 +31,25 @@ set(gca,'xticklabel',labelCount.Label)
 % training set, test set and validation set
 [imdsTrain,imdsValidation, imdsTest] = splitEachLabel(imds,7000,950,1000, 'Randomized');
 
+% Define the convolutional neural network architecture.
+layers = [
+imageInputLayer([28 28 1])
+convolution2dLayer(3,8,'Padding','same')
+batchNormalizationLayer
+reluLayer
+maxPooling2dLayer(2,'Stride',2)
+convolution2dLayer(3,16 ...
+,'Padding','same')
+batchNormalizationLayer
+reluLayer
+maxPooling2dLayer(2,'Stride',2)
+convolution2dLayer(3,32,'Padding','same')
+batchNormalizationLayer
+reluLayer
+fullyConnectedLayer(6)
+softmaxLayer
+classificationLayer]
+
 
 function imds = customReadDatastoreImage(filename)
 % code from default function: 

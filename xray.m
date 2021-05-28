@@ -61,6 +61,9 @@ options = trainingOptions('sgdm', ...
  'Verbose',false, ...
  'Plots','training-progress');
 
+%Train Network Using Training Data
+net = trainNetwork(imdsTrain,layers,options);
+
 
 function imds = customReadDatastoreImage(filename)
 % code from default function: 

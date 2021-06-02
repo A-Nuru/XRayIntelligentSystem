@@ -65,6 +65,12 @@ options = trainingOptions('sgdm', ...
 net = trainNetwork(imdsTrain,layers,options);
 
 
+% Calculate test accuracy
+YPredTest = classify(net,imdsTest);
+YTest = imdsTest;
+accuracyTest = sum(YPredTest == YTest.Labels)/numel(YTest.Labels)
+
+
 function imds = customReadDatastoreImage(filename)
 % code from default function: 
 onState = warning('off', 'backtrace'); 

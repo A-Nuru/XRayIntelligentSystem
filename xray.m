@@ -70,6 +70,11 @@ YPredTest = classify(net,imdsTest);
 YTest = imdsTest;
 accuracyTest = sum(YPredTest == YTest.Labels)/numel(YTest.Labels)
 
+% Compute validation accuracy
+YPred = classify(net,imdsValidation);
+YValidation = imdsValidation;
+accuracyVal = sum(YPred == YValidation.Labels)/numel(YValidation.Labels)
+
 
 function imds = customReadDatastoreImage(filename)
 % code from default function: 

@@ -75,6 +75,8 @@ YPred = classify(net,imdsValidation);
 YValidation = imdsValidation;
 accuracyVal = sum(YPred == YValidation.Labels)/numel(YValidation.Labels)
 
+% Plotting confusion matrix
+plotconfusion(YTest.Labels,YPredTest)
 
 function imds = customReadDatastoreImage(filename)
 % code from default function: 

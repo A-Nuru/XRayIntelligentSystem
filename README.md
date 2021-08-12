@@ -11,3 +11,10 @@ AN EFFICIENT INTELLIGENT ANALYSIS SYSTEM FOR CLASSIFYING X-RAY IMAGES OF BODY PA
 ![image](https://user-images.githubusercontent.com/45924101/129254603-5a31924e-0094-46ce-b517-4513bec72b44.png)
 
 
+
+## A plot of confusion matrix showing the performance of the classification model. 
+
+![image](https://user-images.githubusercontent.com/45924101/129255705-69fc5e90-1a91-4983-a0f6-49295f167d16.png)
+
+
+
